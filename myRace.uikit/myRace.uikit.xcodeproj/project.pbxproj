@@ -16,6 +16,8 @@
 		24AEF4BA2A5ED2BF0092C771 /* myRace_uikitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4B92A5ED2BF0092C771 /* myRace_uikitTests.swift */; };
 		24AEF4C42A5ED2BF0092C771 /* myRace_uikitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4C32A5ED2BF0092C771 /* myRace_uikitUITests.swift */; };
 		24AEF4C62A5ED2BF0092C771 /* myRace_uikitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4C52A5ED2BF0092C771 /* myRace_uikitUITestsLaunchTests.swift */; };
+		24AEF50A2A5ED32E0092C771 /* myRace_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AEF5092A5ED32E0092C771 /* myRace_core.framework */; };
+		24AEF50B2A5ED32E0092C771 /* myRace_core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24AEF5092A5ED32E0092C771 /* myRace_core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		24AEF50C2A5ED32E0092C771 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24AEF50B2A5ED32E0092C771 /* myRace_core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		24AEF49F2A5ED2BE0092C771 /* myRace.uikit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myRace.uikit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AEF4A22A5ED2BE0092C771 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +65,7 @@
 		24AEF4BF2A5ED2BF0092C771 /* myRace.uikitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myRace.uikitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AEF4C32A5ED2BF0092C771 /* myRace_uikitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myRace_uikitUITests.swift; sourceTree = "<group>"; };
 		24AEF4C52A5ED2BF0092C771 /* myRace_uikitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myRace_uikitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		24AEF5092A5ED32E0092C771 /* myRace_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = myRace_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AEF50A2A5ED32E0092C771 /* myRace_core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +101,7 @@
 				24AEF4B82A5ED2BF0092C771 /* myRace.uikitTests */,
 				24AEF4C22A5ED2BF0092C771 /* myRace.uikitUITests */,
 				24AEF4A02A5ED2BE0092C771 /* Products */,
+				24AEF5082A5ED32E0092C771 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +146,14 @@
 			path = myRace.uikitUITests;
 			sourceTree = "<group>";
 		};
+		24AEF5082A5ED32E0092C771 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF5092A5ED32E0092C771 /* myRace_core.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +164,7 @@
 				24AEF49B2A5ED2BE0092C771 /* Sources */,
 				24AEF49C2A5ED2BE0092C771 /* Frameworks */,
 				24AEF49D2A5ED2BE0092C771 /* Resources */,
+				24AEF50C2A5ED32E0092C771 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

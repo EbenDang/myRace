@@ -11,6 +11,23 @@
 		24AEF4872A5ED2890092C771 /* myRace_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AEF47C2A5ED2890092C771 /* myRace_core.framework */; };
 		24AEF48C2A5ED2890092C771 /* myRace_coreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF48B2A5ED2890092C771 /* myRace_coreTests.swift */; };
 		24AEF48D2A5ED2890092C771 /* myRace_core.h in Headers */ = {isa = PBXBuildFile; fileRef = 24AEF47F2A5ED2890092C771 /* myRace_core.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24AEF5162A5ED38D0092C771 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5152A5ED38D0092C771 /* HttpService.swift */; };
+		24AEF5172A5ED38D0092C771 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5152A5ED38D0092C771 /* HttpService.swift */; };
+		24AEF5192A5ED39C0092C771 /* HttpServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5182A5ED39C0092C771 /* HttpServiceImpl.swift */; };
+		24AEF51A2A5ED39C0092C771 /* HttpServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5182A5ED39C0092C771 /* HttpServiceImpl.swift */; };
+		24AEF51C2A5ED6120092C771 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF51B2A5ED6120092C771 /* ServiceLocator.swift */; };
+		24AEF51D2A5ED6120092C771 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF51B2A5ED6120092C771 /* ServiceLocator.swift */; };
+		24AEF51F2A5ED6ED0092C771 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF51E2A5ED6ED0092C771 /* Constants.swift */; };
+		24AEF5202A5ED6ED0092C771 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF51E2A5ED6ED0092C771 /* Constants.swift */; };
+		24AEF5232A5ED7530092C771 /* String+myRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5222A5ED7530092C771 /* String+myRace.swift */; };
+		24AEF5242A5ED7530092C771 /* String+myRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5222A5ED7530092C771 /* String+myRace.swift */; };
+		24AEF5272A5ED8F90092C771 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5262A5ED8F90092C771 /* Request.swift */; };
+		24AEF5282A5ED8F90092C771 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5262A5ED8F90092C771 /* Request.swift */; };
+		24AEF52B2A5ED9960092C771 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 24AEF52A2A5ED9960092C771 /* Alamofire */; };
+		24AEF52D2A5EDA2A0092C771 /* RaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF52C2A5EDA2A0092C771 /* RaceViewModel.swift */; };
+		24AEF52E2A5EDA2A0092C771 /* RaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF52C2A5EDA2A0092C771 /* RaceViewModel.swift */; };
+		24AEF5302A5EDA9C0092C771 /* RaceThumbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF52F2A5EDA9C0092C771 /* RaceThumbModel.swift */; };
+		24AEF5312A5EDA9C0092C771 /* RaceThumbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF52F2A5EDA9C0092C771 /* RaceThumbModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +46,14 @@
 		24AEF4802A5ED2890092C771 /* myRace_core.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = myRace_core.docc; sourceTree = "<group>"; };
 		24AEF4862A5ED2890092C771 /* myRace.coreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myRace.coreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AEF48B2A5ED2890092C771 /* myRace_coreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myRace_coreTests.swift; sourceTree = "<group>"; };
+		24AEF5152A5ED38D0092C771 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
+		24AEF5182A5ED39C0092C771 /* HttpServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpServiceImpl.swift; sourceTree = "<group>"; };
+		24AEF51B2A5ED6120092C771 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		24AEF51E2A5ED6ED0092C771 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		24AEF5222A5ED7530092C771 /* String+myRace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+myRace.swift"; sourceTree = "<group>"; };
+		24AEF5262A5ED8F90092C771 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		24AEF52C2A5EDA2A0092C771 /* RaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewModel.swift; sourceTree = "<group>"; };
+		24AEF52F2A5EDA9C0092C771 /* RaceThumbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceThumbModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AEF52B2A5ED9960092C771 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,8 +97,13 @@
 		24AEF47E2A5ED2890092C771 /* myRace.core */ = {
 			isa = PBXGroup;
 			children = (
+				24AEF5252A5ED8ED0092C771 /* models */,
+				24AEF5212A5ED7410092C771 /* extensions */,
+				24AEF5142A5ED3670092C771 /* viewmodels */,
+				24AEF5132A5ED3600092C771 /* services */,
 				24AEF47F2A5ED2890092C771 /* myRace_core.h */,
 				24AEF4802A5ED2890092C771 /* myRace_core.docc */,
+				24AEF51E2A5ED6ED0092C771 /* Constants.swift */,
 			);
 			path = myRace.core;
 			sourceTree = "<group>";
@@ -83,6 +114,41 @@
 				24AEF48B2A5ED2890092C771 /* myRace_coreTests.swift */,
 			);
 			path = myRace.coreTests;
+			sourceTree = "<group>";
+		};
+		24AEF5132A5ED3600092C771 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF5152A5ED38D0092C771 /* HttpService.swift */,
+				24AEF5182A5ED39C0092C771 /* HttpServiceImpl.swift */,
+				24AEF51B2A5ED6120092C771 /* ServiceLocator.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		24AEF5142A5ED3670092C771 /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF52C2A5EDA2A0092C771 /* RaceViewModel.swift */,
+			);
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		24AEF5212A5ED7410092C771 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF5222A5ED7530092C771 /* String+myRace.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		24AEF5252A5ED8ED0092C771 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF5262A5ED8F90092C771 /* Request.swift */,
+				24AEF52F2A5EDA9C0092C771 /* RaceThumbModel.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +179,9 @@
 			dependencies = (
 			);
 			name = myRace.core;
+			packageProductDependencies = (
+				24AEF52A2A5ED9960092C771 /* Alamofire */,
+			);
 			productName = myRace.core;
 			productReference = 24AEF47C2A5ED2890092C771 /* myRace_core.framework */;
 			productType = "com.apple.product-type.framework";
@@ -162,6 +231,9 @@
 				Base,
 			);
 			mainGroup = 24AEF4722A5ED2890092C771;
+			packageReferences = (
+				24AEF5292A5ED9960092C771 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 24AEF47D2A5ED2890092C771 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,7 +266,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AEF51F2A5ED6ED0092C771 /* Constants.swift in Sources */,
+				24AEF5302A5EDA9C0092C771 /* RaceThumbModel.swift in Sources */,
+				24AEF5232A5ED7530092C771 /* String+myRace.swift in Sources */,
+				24AEF51C2A5ED6120092C771 /* ServiceLocator.swift in Sources */,
 				24AEF4812A5ED2890092C771 /* myRace_core.docc in Sources */,
+				24AEF5272A5ED8F90092C771 /* Request.swift in Sources */,
+				24AEF52D2A5EDA2A0092C771 /* RaceViewModel.swift in Sources */,
+				24AEF5162A5ED38D0092C771 /* HttpService.swift in Sources */,
+				24AEF5192A5ED39C0092C771 /* HttpServiceImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +282,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AEF5202A5ED6ED0092C771 /* Constants.swift in Sources */,
+				24AEF5312A5EDA9C0092C771 /* RaceThumbModel.swift in Sources */,
+				24AEF5242A5ED7530092C771 /* String+myRace.swift in Sources */,
+				24AEF51D2A5ED6120092C771 /* ServiceLocator.swift in Sources */,
 				24AEF48C2A5ED2890092C771 /* myRace_coreTests.swift in Sources */,
+				24AEF5282A5ED8F90092C771 /* Request.swift in Sources */,
+				24AEF52E2A5EDA2A0092C771 /* RaceViewModel.swift in Sources */,
+				24AEF5172A5ED38D0092C771 /* HttpService.swift in Sources */,
+				24AEF51A2A5ED39C0092C771 /* HttpServiceImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +488,7 @@
 		24AEF4942A5ED2890092C771 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -415,6 +504,7 @@
 		24AEF4952A5ED2890092C771 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -458,6 +548,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		24AEF5292A5ED9960092C771 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		24AEF52A2A5ED9960092C771 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24AEF5292A5ED9960092C771 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 24AEF4732A5ED2890092C771 /* Project object */;
 }

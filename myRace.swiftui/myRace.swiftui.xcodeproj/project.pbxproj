@@ -14,6 +14,8 @@
 		24AEF4F02A5ED2F20092C771 /* myRace_swiftuiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4EF2A5ED2F20092C771 /* myRace_swiftuiTests.swift */; };
 		24AEF4FA2A5ED2F20092C771 /* myRace_swiftuiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4F92A5ED2F20092C771 /* myRace_swiftuiUITests.swift */; };
 		24AEF4FC2A5ED2F20092C771 /* myRace_swiftuiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4FB2A5ED2F20092C771 /* myRace_swiftuiUITestsLaunchTests.swift */; };
+		24AEF5102A5ED3440092C771 /* myRace_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AEF50F2A5ED3440092C771 /* myRace_core.framework */; };
+		24AEF5112A5ED3440092C771 /* myRace_core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24AEF50F2A5ED3440092C771 /* myRace_core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		24AEF5122A5ED3440092C771 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				24AEF5112A5ED3440092C771 /* myRace_core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		24AEF4DB2A5ED2F00092C771 /* myRace.swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myRace.swiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AEF4DE2A5ED2F00092C771 /* myRace_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myRace_swiftuiApp.swift; sourceTree = "<group>"; };
@@ -44,6 +60,8 @@
 		24AEF4F52A5ED2F20092C771 /* myRace.swiftuiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myRace.swiftuiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AEF4F92A5ED2F20092C771 /* myRace_swiftuiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myRace_swiftuiUITests.swift; sourceTree = "<group>"; };
 		24AEF4FB2A5ED2F20092C771 /* myRace_swiftuiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myRace_swiftuiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		24AEF50D2A5ED3360092C771 /* myRace-swiftui-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "myRace-swiftui-Info.plist"; sourceTree = SOURCE_ROOT; };
+		24AEF50F2A5ED3440092C771 /* myRace_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = myRace_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AEF5102A5ED3440092C771 /* myRace_core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +97,7 @@
 				24AEF4EE2A5ED2F20092C771 /* myRace.swiftuiTests */,
 				24AEF4F82A5ED2F20092C771 /* myRace.swiftuiUITests */,
 				24AEF4DC2A5ED2F00092C771 /* Products */,
+				24AEF50E2A5ED3440092C771 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +114,7 @@
 		24AEF4DD2A5ED2F00092C771 /* myRace.swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				24AEF50D2A5ED3360092C771 /* myRace-swiftui-Info.plist */,
 				24AEF4DE2A5ED2F00092C771 /* myRace_swiftuiApp.swift */,
 				24AEF4E02A5ED2F00092C771 /* ContentView.swift */,
 				24AEF4E22A5ED2F10092C771 /* Assets.xcassets */,
@@ -127,6 +148,14 @@
 			path = myRace.swiftuiUITests;
 			sourceTree = "<group>";
 		};
+		24AEF50E2A5ED3440092C771 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF50F2A5ED3440092C771 /* myRace_core.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +166,7 @@
 				24AEF4D72A5ED2F00092C771 /* Sources */,
 				24AEF4D82A5ED2F00092C771 /* Frameworks */,
 				24AEF4D92A5ED2F00092C771 /* Resources */,
+				24AEF5122A5ED3440092C771 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -419,6 +449,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"myRace.swiftui/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "myRace-swiftui-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -447,6 +478,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"myRace.swiftui/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "myRace-swiftui-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
