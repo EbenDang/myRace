@@ -10,7 +10,7 @@ import Alamofire
 
 class HttpServiceImpl: HttpService {
     
-    func request<T: Decodable>(request: Request, completion: @escaping (Result<T, EnError>) -> Void) {
+    func request<T: Decodable>(request: Request, completion: @escaping (Result<Response<T>, EnError>) -> Void) {
         let endPoint = "\(ApiEndPoint.basePoint)\(ApiEndPoint.apiVer)\(request.url)"
         
         AF.request(endPoint, method: request.method, parameters: request.params)
@@ -29,7 +29,7 @@ class HttpServiceImpl: HttpService {
                 
                 print(String(data: jsonData, encoding: .utf8)!)
                 do {
-                    let response = try JSONDecoder().decode(T.self, from: jsonData)
+                    let response = try JSONDecoder().decode(Response<T>.self, from: jsonData)
                     completion(.success(response))
                 } catch let error {
                     print(error)

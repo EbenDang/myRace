@@ -8,5 +8,5 @@
 import Foundation
 
 protocol HttpService {
-    func request<T: Decodable>(request: Request, completion: @escaping (Result<T, EnError>) -> Void)
+    func request<T: Decodable>(request: Request, completion: @escaping (Result<Response<T>, EnError>) -> Void)
 }

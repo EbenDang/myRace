@@ -13,6 +13,9 @@ struct ApiEndPoint {
     static let raceEndPoint: String = "/racing"
 }
 
+struct Constants {
+    static let pageSize: Int = 10
+}
 
 public enum EnError: Error {
     case invalidResData

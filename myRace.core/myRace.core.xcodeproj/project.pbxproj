@@ -28,6 +28,16 @@
 		24AEF52E2A5EDA2A0092C771 /* RaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF52C2A5EDA2A0092C771 /* RaceViewModel.swift */; };
 		24AEF5302A5EDA9C0092C771 /* RaceThumbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF52F2A5EDA9C0092C771 /* RaceThumbModel.swift */; };
 		24AEF5312A5EDA9C0092C771 /* RaceThumbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF52F2A5EDA9C0092C771 /* RaceThumbModel.swift */; };
+		24AEF5332A5EDDFD0092C771 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5322A5EDDFD0092C771 /* Response.swift */; };
+		24AEF5342A5EDDFD0092C771 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5322A5EDDFD0092C771 /* Response.swift */; };
+		24AEF5382A6006790092C771 /* UrlQueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5372A6006790092C771 /* UrlQueryItems.swift */; };
+		24AEF5392A6006790092C771 /* UrlQueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5372A6006790092C771 /* UrlQueryItems.swift */; };
+		24AEF53E2A600DC80092C771 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF53D2A600DC80092C771 /* BaseViewModel.swift */; };
+		24AEF53F2A600DC80092C771 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF53D2A600DC80092C771 /* BaseViewModel.swift */; };
+		24AEF5422A600F1D0092C771 /* SimpleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5412A600F1D0092C771 /* SimpleDataSource.swift */; };
+		24AEF5432A600F1D0092C771 /* SimpleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5412A600F1D0092C771 /* SimpleDataSource.swift */; };
+		24AEF5452A60107F0092C771 /* Array+myRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5442A60107F0092C771 /* Array+myRace.swift */; };
+		24AEF5462A60107F0092C771 /* Array+myRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5442A60107F0092C771 /* Array+myRace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +64,11 @@
 		24AEF5262A5ED8F90092C771 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		24AEF52C2A5EDA2A0092C771 /* RaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewModel.swift; sourceTree = "<group>"; };
 		24AEF52F2A5EDA9C0092C771 /* RaceThumbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceThumbModel.swift; sourceTree = "<group>"; };
+		24AEF5322A5EDDFD0092C771 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		24AEF5372A6006790092C771 /* UrlQueryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlQueryItems.swift; sourceTree = "<group>"; };
+		24AEF53D2A600DC80092C771 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		24AEF5412A600F1D0092C771 /* SimpleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDataSource.swift; sourceTree = "<group>"; };
+		24AEF5442A60107F0092C771 /* Array+myRace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+myRace.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +112,8 @@
 		24AEF47E2A5ED2890092C771 /* myRace.core */ = {
 			isa = PBXGroup;
 			children = (
+				24AEF5402A600F0F0092C771 /* protocols */,
+				24AEF5352A60055A0092C771 /* misc */,
 				24AEF5252A5ED8ED0092C771 /* models */,
 				24AEF5212A5ED7410092C771 /* extensions */,
 				24AEF5142A5ED3670092C771 /* viewmodels */,
@@ -130,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				24AEF52C2A5EDA2A0092C771 /* RaceViewModel.swift */,
+				24AEF53D2A600DC80092C771 /* BaseViewModel.swift */,
 			);
 			path = viewmodels;
 			sourceTree = "<group>";
@@ -138,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				24AEF5222A5ED7530092C771 /* String+myRace.swift */,
+				24AEF5442A60107F0092C771 /* Array+myRace.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -147,8 +166,25 @@
 			children = (
 				24AEF5262A5ED8F90092C771 /* Request.swift */,
 				24AEF52F2A5EDA9C0092C771 /* RaceThumbModel.swift */,
+				24AEF5322A5EDDFD0092C771 /* Response.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		24AEF5352A60055A0092C771 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF5372A6006790092C771 /* UrlQueryItems.swift */,
+			);
+			path = misc;
+			sourceTree = "<group>";
+		};
+		24AEF5402A600F0F0092C771 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF5412A600F1D0092C771 /* SimpleDataSource.swift */,
+			);
+			path = protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,13 +304,18 @@
 			files = (
 				24AEF51F2A5ED6ED0092C771 /* Constants.swift in Sources */,
 				24AEF5302A5EDA9C0092C771 /* RaceThumbModel.swift in Sources */,
+				24AEF5452A60107F0092C771 /* Array+myRace.swift in Sources */,
+				24AEF5422A600F1D0092C771 /* SimpleDataSource.swift in Sources */,
 				24AEF5232A5ED7530092C771 /* String+myRace.swift in Sources */,
 				24AEF51C2A5ED6120092C771 /* ServiceLocator.swift in Sources */,
+				24AEF5332A5EDDFD0092C771 /* Response.swift in Sources */,
+				24AEF53E2A600DC80092C771 /* BaseViewModel.swift in Sources */,
 				24AEF4812A5ED2890092C771 /* myRace_core.docc in Sources */,
 				24AEF5272A5ED8F90092C771 /* Request.swift in Sources */,
 				24AEF52D2A5EDA2A0092C771 /* RaceViewModel.swift in Sources */,
 				24AEF5162A5ED38D0092C771 /* HttpService.swift in Sources */,
 				24AEF5192A5ED39C0092C771 /* HttpServiceImpl.swift in Sources */,
+				24AEF5382A6006790092C771 /* UrlQueryItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,13 +325,18 @@
 			files = (
 				24AEF5202A5ED6ED0092C771 /* Constants.swift in Sources */,
 				24AEF5312A5EDA9C0092C771 /* RaceThumbModel.swift in Sources */,
+				24AEF5462A60107F0092C771 /* Array+myRace.swift in Sources */,
+				24AEF5432A600F1D0092C771 /* SimpleDataSource.swift in Sources */,
 				24AEF5242A5ED7530092C771 /* String+myRace.swift in Sources */,
 				24AEF51D2A5ED6120092C771 /* ServiceLocator.swift in Sources */,
+				24AEF5342A5EDDFD0092C771 /* Response.swift in Sources */,
+				24AEF53F2A600DC80092C771 /* BaseViewModel.swift in Sources */,
 				24AEF48C2A5ED2890092C771 /* myRace_coreTests.swift in Sources */,
 				24AEF5282A5ED8F90092C771 /* Request.swift in Sources */,
 				24AEF52E2A5EDA2A0092C771 /* RaceViewModel.swift in Sources */,
 				24AEF5172A5ED38D0092C771 /* HttpService.swift in Sources */,
 				24AEF51A2A5ED39C0092C771 /* HttpServiceImpl.swift in Sources */,
+				24AEF5392A6006790092C771 /* UrlQueryItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
