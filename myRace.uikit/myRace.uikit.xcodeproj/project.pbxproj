@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		24AEF4A32A5ED2BE0092C771 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4A22A5ED2BE0092C771 /* AppDelegate.swift */; };
 		24AEF4A52A5ED2BE0092C771 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4A42A5ED2BE0092C771 /* SceneDelegate.swift */; };
-		24AEF4A72A5ED2BE0092C771 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4A62A5ED2BE0092C771 /* ViewController.swift */; };
-		24AEF4AA2A5ED2BE0092C771 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24AEF4A82A5ED2BE0092C771 /* Main.storyboard */; };
 		24AEF4AC2A5ED2BF0092C771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24AEF4AB2A5ED2BF0092C771 /* Assets.xcassets */; };
 		24AEF4AF2A5ED2BF0092C771 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24AEF4AD2A5ED2BF0092C771 /* LaunchScreen.storyboard */; };
 		24AEF4BA2A5ED2BF0092C771 /* myRace_uikitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4B92A5ED2BF0092C771 /* myRace_uikitTests.swift */; };
@@ -18,6 +16,14 @@
 		24AEF4C62A5ED2BF0092C771 /* myRace_uikitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4C52A5ED2BF0092C771 /* myRace_uikitUITestsLaunchTests.swift */; };
 		24AEF50A2A5ED32E0092C771 /* myRace_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AEF5092A5ED32E0092C771 /* myRace_core.framework */; };
 		24AEF50B2A5ED32E0092C771 /* myRace_core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24AEF5092A5ED32E0092C771 /* myRace_core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24AEF54A2A6023900092C771 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5492A6023900092C771 /* BaseViewController.swift */; };
+		24AEF54D2A6023F10092C771 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 24AEF54C2A6023F10092C771 /* MBProgressHUD */; };
+		24AEF54F2A6024130092C771 /* EnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF54E2A6024130092C771 /* EnViewController.swift */; };
+		24AEF5512A6024EE0092C771 /* RaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5502A6024EE0092C771 /* RaceViewController.swift */; };
+		24AEF5542A6025D30092C771 /* UIView+Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5532A6025D30092C771 /* UIView+Race.swift */; };
+		24AEF5582A6028D90092C771 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5572A6028D90092C771 /* BaseView.swift */; };
+		24AEF55A2A6029000092C771 /* EnModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5592A6029000092C771 /* EnModelView.swift */; };
+		24AEF55F2A602A110092C771 /* RaceItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF55E2A602A110092C771 /* RaceItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +61,6 @@
 		24AEF49F2A5ED2BE0092C771 /* myRace.uikit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myRace.uikit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AEF4A22A5ED2BE0092C771 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24AEF4A42A5ED2BE0092C771 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		24AEF4A62A5ED2BE0092C771 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		24AEF4A92A5ED2BE0092C771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24AEF4AB2A5ED2BF0092C771 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24AEF4AE2A5ED2BF0092C771 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24AEF4B02A5ED2BF0092C771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +70,13 @@
 		24AEF4C32A5ED2BF0092C771 /* myRace_uikitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myRace_uikitUITests.swift; sourceTree = "<group>"; };
 		24AEF4C52A5ED2BF0092C771 /* myRace_uikitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myRace_uikitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		24AEF5092A5ED32E0092C771 /* myRace_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = myRace_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24AEF5492A6023900092C771 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		24AEF54E2A6024130092C771 /* EnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnViewController.swift; sourceTree = "<group>"; };
+		24AEF5502A6024EE0092C771 /* RaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewController.swift; sourceTree = "<group>"; };
+		24AEF5532A6025D30092C771 /* UIView+Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Race.swift"; sourceTree = "<group>"; };
+		24AEF5572A6028D90092C771 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		24AEF5592A6029000092C771 /* EnModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnModelView.swift; sourceTree = "<group>"; };
+		24AEF55E2A602A110092C771 /* RaceItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AEF54D2A6023F10092C771 /* MBProgressHUD in Frameworks */,
 				24AEF50A2A5ED32E0092C771 /* myRace_core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,10 +130,11 @@
 		24AEF4A12A5ED2BE0092C771 /* myRace.uikit */ = {
 			isa = PBXGroup;
 			children = (
+				24AEF5552A6028AE0092C771 /* views */,
+				24AEF5522A6025BE0092C771 /* extensions */,
+				24AEF5472A6023640092C771 /* viewcontrollers */,
 				24AEF4A22A5ED2BE0092C771 /* AppDelegate.swift */,
 				24AEF4A42A5ED2BE0092C771 /* SceneDelegate.swift */,
-				24AEF4A62A5ED2BE0092C771 /* ViewController.swift */,
-				24AEF4A82A5ED2BE0092C771 /* Main.storyboard */,
 				24AEF4AB2A5ED2BF0092C771 /* Assets.xcassets */,
 				24AEF4AD2A5ED2BF0092C771 /* LaunchScreen.storyboard */,
 				24AEF4B02A5ED2BF0092C771 /* Info.plist */,
@@ -154,6 +167,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		24AEF5472A6023640092C771 /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF5482A6023700092C771 /* base */,
+				24AEF5502A6024EE0092C771 /* RaceViewController.swift */,
+			);
+			path = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		24AEF5482A6023700092C771 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF5492A6023900092C771 /* BaseViewController.swift */,
+				24AEF54E2A6024130092C771 /* EnViewController.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		24AEF5522A6025BE0092C771 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF5532A6025D30092C771 /* UIView+Race.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		24AEF5552A6028AE0092C771 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF5562A6028BB0092C771 /* base */,
+				24AEF55E2A602A110092C771 /* RaceItemCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		24AEF5562A6028BB0092C771 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				24AEF5572A6028D90092C771 /* BaseView.swift */,
+				24AEF5592A6029000092C771 /* EnModelView.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,6 +228,9 @@
 			dependencies = (
 			);
 			name = myRace.uikit;
+			packageProductDependencies = (
+				24AEF54C2A6023F10092C771 /* MBProgressHUD */,
+			);
 			productName = myRace.uikit;
 			productReference = 24AEF49F2A5ED2BE0092C771 /* myRace.uikit.app */;
 			productType = "com.apple.product-type.application";
@@ -243,6 +303,9 @@
 				Base,
 			);
 			mainGroup = 24AEF4962A5ED2BE0092C771;
+			packageReferences = (
+				24AEF54B2A6023F10092C771 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+			);
 			productRefGroup = 24AEF4A02A5ED2BE0092C771 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,7 +324,6 @@
 			files = (
 				24AEF4AF2A5ED2BF0092C771 /* LaunchScreen.storyboard in Resources */,
 				24AEF4AC2A5ED2BF0092C771 /* Assets.xcassets in Resources */,
-				24AEF4AA2A5ED2BE0092C771 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,9 +348,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24AEF4A72A5ED2BE0092C771 /* ViewController.swift in Sources */,
+				24AEF5542A6025D30092C771 /* UIView+Race.swift in Sources */,
+				24AEF54A2A6023900092C771 /* BaseViewController.swift in Sources */,
+				24AEF54F2A6024130092C771 /* EnViewController.swift in Sources */,
 				24AEF4A32A5ED2BE0092C771 /* AppDelegate.swift in Sources */,
 				24AEF4A52A5ED2BE0092C771 /* SceneDelegate.swift in Sources */,
+				24AEF55A2A6029000092C771 /* EnModelView.swift in Sources */,
+				24AEF55F2A602A110092C771 /* RaceItemCell.swift in Sources */,
+				24AEF5512A6024EE0092C771 /* RaceViewController.swift in Sources */,
+				24AEF5582A6028D90092C771 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,14 +393,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		24AEF4A82A5ED2BE0092C771 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				24AEF4A92A5ED2BE0092C771 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		24AEF4AD2A5ED2BF0092C771 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -469,7 +529,7 @@
 				INFOPLIST_FILE = myRace.uikit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,7 +556,7 @@
 				INFOPLIST_FILE = myRace.uikit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -624,6 +684,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		24AEF54B2A6023F10092C771 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		24AEF54C2A6023F10092C771 /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24AEF54B2A6023F10092C771 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 24AEF4972A5ED2BE0092C771 /* Project object */;
 }

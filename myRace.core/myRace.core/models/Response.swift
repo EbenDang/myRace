@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Response<T>: Decodable where T: Decodable {
+public struct Response<T>: Decodable where T: Decodable {
     let status: Int
     let message: String
     let data: T?

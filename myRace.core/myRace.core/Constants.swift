@@ -10,11 +10,12 @@ import Foundation
 struct ApiEndPoint {
     static let basePoint: String = "https://api.neds.com.au/rest"
     static let apiVer: String = "/v1"
-    static let raceEndPoint: String = "/racing"
+    static let raceEndPoint: String = "/racing/"
 }
 
 struct Constants {
     static let pageSize: Int = 10
+    static let defaultDateFormat = "dd/MM/yyyy HH:mm:ss"
 }
 
 public enum EnError: Error {

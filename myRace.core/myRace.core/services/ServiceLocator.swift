@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol IServiceLocator {
+public protocol ServiceLocator {
     func register<T>(instance: T)
     func register<T>(recipe: @escaping () -> T)
     func resolve<T>() -> T?
 }
 
 
-class ServiceLocator: IServiceLocator {
+open class ServiceLocatorImpl: ServiceLocator {
     
     enum RegistryRec {
         case Instance(Any)
@@ -32,28 +32,28 @@ class ServiceLocator: IServiceLocator {
     
     private lazy var repository: Dictionary<String, RegistryRec> = [:]
     
-    private static var instance: ServiceLocator = {
-        return ServiceLocator()
+    private static var instance: ServiceLocatorImpl = {
+        return ServiceLocatorImpl()
     }()
     
     private init() {
     }
     
-    class func shareInstance() -> ServiceLocator {
+    public class func shareInstance() -> ServiceLocatorImpl {
         return instance
     }
     
-    func register<T>(instance: T) {
+    public func register<T>(instance: T) {
         let key = typeNmae(some: T.self)
         self.repository[key] = .Instance(instance)
     }
     
-    func register<T>(recipe: @escaping () -> T) {
+    public func register<T>(recipe: @escaping () -> T) {
         let key = typeNmae(some: T.self)
         self.repository[key] = .Recipe(recipe)
     }
     
-    func resolve<T>() -> T? {
+    public func resolve<T>() -> T? {
         let key = self.typeNmae(some: T.self)
         var instance: T?
         if let record = self.repository[key] {

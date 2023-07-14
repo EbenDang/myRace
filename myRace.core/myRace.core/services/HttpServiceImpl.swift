@@ -12,7 +12,6 @@ class HttpServiceImpl: HttpService {
     
     func request<T: Decodable>(request: Request, completion: @escaping (Result<Response<T>, EnError>) -> Void) {
         let endPoint = "\(ApiEndPoint.basePoint)\(ApiEndPoint.apiVer)\(request.url)"
-        
         AF.request(endPoint, method: request.method, parameters: request.params)
             .validate()
             .responseData { result in

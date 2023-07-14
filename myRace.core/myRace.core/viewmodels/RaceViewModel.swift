@@ -7,15 +7,12 @@
 
 import Foundation
 
-protocol IViewModel {
+public protocol ViewModel {
     func initViewModel()
 }
 
-protocol RaceViewModel {
-}
-
-class RaceViewModelImpl: BaseViewModel, IViewModel, RaceViewModel, SimpleDataSource, ObservableObject {
-    typealias ItemType = RaceSummaryItem
+public class RaceViewModelImpl: BaseViewModel, ViewModel, SimpleDataSource, ObservableObject {
+    public typealias ItemType = RaceSummaryItem
     
     private static let MaxNextRaceItemCount = 5
     
@@ -23,19 +20,20 @@ class RaceViewModelImpl: BaseViewModel, IViewModel, RaceViewModel, SimpleDataSou
     private var raceThumb: RaceThumbModel?
     private var httpService: HttpService?
     
-    init(httpService: HttpService) {
+    public init(httpService: HttpService) {
         self.httpService = httpService;
     }
     
-    func initViewModel() {
+    public func initViewModel() {
         self.loadRaceItems()
     }
     
     // MARK: - SimpleDataSource
-    func getSectionCount() -> Int {
+    public func getSectionCount() -> Int {
         return 1
     }
-    func getRowCount(sectionIndex: Int) -> Int {
+    
+    public func getRowCount(sectionIndex: Int) -> Int {
         guard let model = self.raceThumb else {
             return 0
         }
@@ -43,7 +41,7 @@ class RaceViewModelImpl: BaseViewModel, IViewModel, RaceViewModel, SimpleDataSou
         return max(model.raceSummeries.values.count, Self.MaxNextRaceItemCount)
     }
     
-    func getItem(sectionIndex: Int, rowIndex: Int) -> ItemType? {
+    public func getItem(sectionIndex: Int, rowIndex: Int) -> ItemType? {
         
         guard let models = self.raceThumb?.raceSummeries.map({ $0.1 }),
               models.validIndex(index: rowIndex) else {

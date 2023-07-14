@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RaceThumbModel: Decodable {
+public struct RaceThumbModel: Model, Decodable {
     let nextIds:[String]
     let raceSummeries: [String: RaceSummaryItem]
     
@@ -18,14 +18,14 @@ struct RaceThumbModel: Decodable {
     
 }
 
-struct RaceSummaryItem: Decodable {
-    let raceId: String
-    let raceName: String
-    let raceNum: String
-    let meetingId: String
-    let meetingName: String
-    let categoryId: String
-    let advertisedStart: Advertised
+public struct RaceSummaryItem: Model, Decodable {
+    public let raceId: String
+    public let raceName: String
+    public let raceNum: Int
+    public let meetingId: String
+    public let meetingName: String
+    public let categoryId: String
+    public let advertisedStart: Advertised
     
     enum CodingKeys: String, CodingKey {
         case raceId = "race_id"
@@ -39,6 +39,6 @@ struct RaceSummaryItem: Decodable {
 }
 
 
-struct Advertised: Decodable {
-    let seconds: Int
+public struct Advertised: Decodable {
+    public let seconds: Int
 }

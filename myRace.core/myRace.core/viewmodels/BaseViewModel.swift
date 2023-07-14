@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BaseViewModel {
+public class BaseViewModel {
     
     func handelError(error: EnError) {
         

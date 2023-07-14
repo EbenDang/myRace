@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-protocol Parcalable {
+public protocol Parcalable {
     func toParameters() -> Parameters
 }
 

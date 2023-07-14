@@ -8,5 +8,6 @@
 import Foundation
 
 extension String {
-    static let Empty: String = ""
+    public static let Empty: String = ""
+    public static let NA = "N/A"
 }

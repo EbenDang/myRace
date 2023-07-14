@@ -38,6 +38,12 @@
 		24AEF5432A600F1D0092C771 /* SimpleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5412A600F1D0092C771 /* SimpleDataSource.swift */; };
 		24AEF5452A60107F0092C771 /* Array+myRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5442A60107F0092C771 /* Array+myRace.swift */; };
 		24AEF5462A60107F0092C771 /* Array+myRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5442A60107F0092C771 /* Array+myRace.swift */; };
+		24AEF55C2A6029C00092C771 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF55B2A6029C00092C771 /* Model.swift */; };
+		24AEF55D2A6029C00092C771 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF55B2A6029C00092C771 /* Model.swift */; };
+		24AEF5612A6036610092C771 /* MyRaceCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5602A6036610092C771 /* MyRaceCore.swift */; };
+		24AEF5622A6036610092C771 /* MyRaceCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5602A6036610092C771 /* MyRaceCore.swift */; };
+		24AEF5672A6165670092C771 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5662A6165670092C771 /* Utils.swift */; };
+		24AEF5682A6165670092C771 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5662A6165670092C771 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +75,9 @@
 		24AEF53D2A600DC80092C771 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		24AEF5412A600F1D0092C771 /* SimpleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleDataSource.swift; sourceTree = "<group>"; };
 		24AEF5442A60107F0092C771 /* Array+myRace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+myRace.swift"; sourceTree = "<group>"; };
+		24AEF55B2A6029C00092C771 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		24AEF5602A6036610092C771 /* MyRaceCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRaceCore.swift; sourceTree = "<group>"; };
+		24AEF5662A6165670092C771 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +130,8 @@
 				24AEF47F2A5ED2890092C771 /* myRace_core.h */,
 				24AEF4802A5ED2890092C771 /* myRace_core.docc */,
 				24AEF51E2A5ED6ED0092C771 /* Constants.swift */,
+				24AEF5602A6036610092C771 /* MyRaceCore.swift */,
+				24AEF5662A6165670092C771 /* Utils.swift */,
 			);
 			path = myRace.core;
 			sourceTree = "<group>";
@@ -183,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				24AEF5412A600F1D0092C771 /* SimpleDataSource.swift */,
+				24AEF55B2A6029C00092C771 /* Model.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -302,15 +314,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AEF55C2A6029C00092C771 /* Model.swift in Sources */,
 				24AEF51F2A5ED6ED0092C771 /* Constants.swift in Sources */,
 				24AEF5302A5EDA9C0092C771 /* RaceThumbModel.swift in Sources */,
 				24AEF5452A60107F0092C771 /* Array+myRace.swift in Sources */,
 				24AEF5422A600F1D0092C771 /* SimpleDataSource.swift in Sources */,
+				24AEF5612A6036610092C771 /* MyRaceCore.swift in Sources */,
 				24AEF5232A5ED7530092C771 /* String+myRace.swift in Sources */,
 				24AEF51C2A5ED6120092C771 /* ServiceLocator.swift in Sources */,
 				24AEF5332A5EDDFD0092C771 /* Response.swift in Sources */,
 				24AEF53E2A600DC80092C771 /* BaseViewModel.swift in Sources */,
 				24AEF4812A5ED2890092C771 /* myRace_core.docc in Sources */,
+				24AEF5672A6165670092C771 /* Utils.swift in Sources */,
 				24AEF5272A5ED8F90092C771 /* Request.swift in Sources */,
 				24AEF52D2A5EDA2A0092C771 /* RaceViewModel.swift in Sources */,
 				24AEF5162A5ED38D0092C771 /* HttpService.swift in Sources */,
@@ -323,15 +338,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AEF55D2A6029C00092C771 /* Model.swift in Sources */,
 				24AEF5202A5ED6ED0092C771 /* Constants.swift in Sources */,
 				24AEF5312A5EDA9C0092C771 /* RaceThumbModel.swift in Sources */,
 				24AEF5462A60107F0092C771 /* Array+myRace.swift in Sources */,
 				24AEF5432A600F1D0092C771 /* SimpleDataSource.swift in Sources */,
+				24AEF5622A6036610092C771 /* MyRaceCore.swift in Sources */,
 				24AEF5242A5ED7530092C771 /* String+myRace.swift in Sources */,
 				24AEF51D2A5ED6120092C771 /* ServiceLocator.swift in Sources */,
 				24AEF5342A5EDDFD0092C771 /* Response.swift in Sources */,
 				24AEF53F2A600DC80092C771 /* BaseViewModel.swift in Sources */,
 				24AEF48C2A5ED2890092C771 /* myRace_coreTests.swift in Sources */,
+				24AEF5682A6165670092C771 /* Utils.swift in Sources */,
 				24AEF5282A5ED8F90092C771 /* Request.swift in Sources */,
 				24AEF52E2A5EDA2A0092C771 /* RaceViewModel.swift in Sources */,
 				24AEF5172A5ED38D0092C771 /* HttpService.swift in Sources */,

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol HttpService {
+public protocol HttpService {
     func request<T: Decodable>(request: Request, completion: @escaping (Result<Response<T>, EnError>) -> Void)
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SimpleDataSource {
+public protocol SimpleDataSource {
     associatedtype ItemType
     
     func getSectionCount() -> Int
