@@ -42,8 +42,8 @@ class RaceItemCell: EnModelTableCell<RaceSummaryItem> {
     
     override func didUpdateModel() {
         self.meetingName.text = self.model?.meetingName ?? String.NA
-        self.raceNum.text = self.model?.raceNum ?? String.NA
-        self.adTime.text = "adc"
+//        self.raceNum.text = self.model?.raceNum ?? String.NA
+//        self.adTime.text = "adc"
     }
         
     //MARK: - Lazy loading

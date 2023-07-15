@@ -40,5 +40,5 @@ public struct RaceSummaryItem: Model, Decodable {
 
 
 public struct Advertised: Decodable {
-    public let seconds: Int
+    public let seconds: Double
 }

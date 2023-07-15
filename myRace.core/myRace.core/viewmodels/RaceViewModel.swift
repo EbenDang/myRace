@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 public protocol ViewModel {
     func initViewModel()
@@ -15,10 +16,13 @@ public class RaceViewModelImpl: BaseViewModel, ViewModel, SimpleDataSource, Obse
     public typealias ItemType = RaceSummaryItem
     
     private static let MaxNextRaceItemCount = 5
+    private static let VisibleWindow: TimeInterval = 60 // 60 seconds
+    private static let RefreshTimeInterval: TimeInterval = 1 // 1 second
     
-    
-    private var raceThumb: RaceThumbModel?
     private var httpService: HttpService?
+    private var allOfRaceItems: [RaceSummaryItem] = []
+    private var nextRaceItems: [RaceSummaryItem] = []
+    private var timer: Timer?
     
     public init(httpService: HttpService) {
         self.httpService = httpService;
@@ -34,21 +38,14 @@ public class RaceViewModelImpl: BaseViewModel, ViewModel, SimpleDataSource, Obse
     }
     
     public func getRowCount(sectionIndex: Int) -> Int {
-        guard let model = self.raceThumb else {
-            return 0
-        }
-        
-        return max(model.raceSummeries.values.count, Self.MaxNextRaceItemCount)
+        return self.nextRaceItems.count
     }
     
     public func getItem(sectionIndex: Int, rowIndex: Int) -> ItemType? {
-        
-        guard let models = self.raceThumb?.raceSummeries.map({ $0.1 }),
-              models.validIndex(index: rowIndex) else {
-            return nil;
+        guard self.nextRaceItems.validIndex(index: rowIndex) else {
+            return nil
         }
-        
-        return models[rowIndex]
+        return self.nextRaceItems[rowIndex]
     }
     
     // MARK: - Private functions
@@ -79,9 +76,59 @@ public class RaceViewModelImpl: BaseViewModel, ViewModel, SimpleDataSource, Obse
             return
         }
         
-        // TODO: sort
+        // sort
+        let items = Array(model.raceSummeries.values).sorted{$0.advertisedStart.seconds < $1.advertisedStart.seconds}
         
-        self.raceThumb = model
+        self.allOfRaceItems.append(contentsOf: items)
+        
+        self.printRaceItems(raceItem: self.allOfRaceItems, message: "allOfRaceItems")
+        
+        self.fillNextRoundRacesIfNeeded()
+        self.startTimer()
+    }
+    
+    private func startTimer() {
+        self.timer?.invalidate()
+        
+        self.timer = Timer.scheduledTimer(timeInterval: Self.VisibleWindow, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
+    }
+    
+    private func fillNextRoundRacesIfNeeded() {
+        let count = min(Self.MaxNextRaceItemCount - self.nextRaceItems.count, Self.MaxNextRaceItemCount)
+        
+        if count <= 0 {
+            print("no spaces")
+            return
+        }
+        let raceItems = self.allOfRaceItems[0..<count]
+        self.nextRaceItems.append(contentsOf: raceItems)
+        self.allOfRaceItems.removeFirst(count)
+        
+        self.printRaceItems(raceItem: self.nextRaceItems, message: "nextRaceItems")
+        self.printRaceItems(raceItem: self.allOfRaceItems, message: "allOfRaceItems after fill")
+    }
+    
+    @objc private func onTimer() {
+        let currentTimeInterval = Date.now.timeIntervalSince1970
+        
+        self.nextRaceItems.removeAll { item in
+            currentTimeInterval - item.advertisedStart.seconds > Self.VisibleWindow
+        }
+        
+        self.fillNextRoundRacesIfNeeded()
+        if self.allOfRaceItems.count <= Self.MaxNextRaceItemCount {
+            self.loadRaceItems()
+        }
+    }
+    
+    private func printRaceItems(raceItem: [RaceSummaryItem], message: String) {
+        print("\n\n************* \(message) (\(raceItem.count)) **************")
+        raceItem.forEach { item in
+            let strTime = Utils.formatFromTimeInterval(timeInterval: item.advertisedStart.seconds, dateFormat: Constants.defaultDateFormat)
+            print("\(item.meetingName)          start: \(strTime)")
+        }
+        
+        print("******************************************")
     }
     
 }
