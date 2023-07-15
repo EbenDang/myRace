@@ -20,7 +20,7 @@ public struct RaceThumbModel: Model, Decodable {
 
 public struct RaceSummaryItem: Model, Decodable {
     public let raceId: String
-    public let raceName: String
+    public let raceName: String?
     public let raceNum: Int
     public let meetingId: String
     public let meetingName: String

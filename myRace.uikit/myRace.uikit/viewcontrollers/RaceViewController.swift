@@ -28,7 +28,22 @@ class RaceViewController: EnViewControllerImpl<RaceViewModelImpl> {
     }
     
     override func initViewModel() {
-        self.showHUD()
+        self.viewModel.$isLoading
+            .receive(on: RunLoop.main)
+            .sink { [weak self ] loading in
+                if loading {
+                    self?.showHUD()
+                } else {
+                    self?.hideHUD()
+                }
+            }.store(in: &self.cancellables)
+        
+        self.viewModel.$refreshedDate
+            .receive(on: RunLoop.main)
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }.store(in: &self.cancellables)
+        
         self.viewModel.initViewModel()
     }
     
@@ -36,6 +51,7 @@ class RaceViewController: EnViewControllerImpl<RaceViewModelImpl> {
     private func initTableView() {
         self.tableView.register(RaceItemCell.self, forCellReuseIdentifier: RaceItemCell.getIdentifier())
         self.tableView.separatorStyle = .none
+        self.tableView.dataSource = self
     }
     
     // MARK: - Lazy loading
@@ -43,4 +59,27 @@ class RaceViewController: EnViewControllerImpl<RaceViewModelImpl> {
         let view = UITableView(frame: .zero, style: .plain)
         return view.enableAutoLayout(t: view)
     }()
-} 
+}
+
+
+extension RaceViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.viewModel.getSectionCount()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.getRowCount(sectionIndex: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: RaceItemCell.getIdentifier(), for: indexPath) as? RaceItemCell
+        
+        cell?.model = self.viewModel.getItem(sectionIndex: indexPath.section, rowIndex: indexPath.row)
+        
+        guard let cell = cell else {
+            return UITableViewCell()
+        }
+        
+        return cell
+    }
+}

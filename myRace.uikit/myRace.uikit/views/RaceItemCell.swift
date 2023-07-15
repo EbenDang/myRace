@@ -11,8 +11,10 @@ import myRace_core
 
 class RaceItemCell: EnModelTableCell<RaceSummaryItem> {
     
-    init() {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: Self.getIdentifier())
+        self.initView()
+        self.initLayout()
     }
     
     static func getIdentifier() -> String {
@@ -41,9 +43,24 @@ class RaceItemCell: EnModelTableCell<RaceSummaryItem> {
     }
     
     override func didUpdateModel() {
-        self.meetingName.text = self.model?.meetingName ?? String.NA
-//        self.raceNum.text = self.model?.raceNum ?? String.NA
-//        self.adTime.text = "adc"
+        guard let model = self.model else {
+            return
+        }
+        
+        self.meetingName.text = model.meetingName
+        self.raceNum.text = "\(model.raceNum)"
+        
+        let currentTimeInterval = Date.now.timeIntervalSince1970
+        let timeInterval = Int(model.advertisedStart.seconds - currentTimeInterval)
+        
+        let seconds = timeInterval % 60
+        let mins = (timeInterval / 60) % 60
+        
+        if mins == 0 {
+            self.adTime.text = "\(seconds)s"
+        } else {
+            self.adTime.text = "\(mins)m\(seconds)s"
+        }
     }
         
     //MARK: - Lazy loading

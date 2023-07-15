@@ -16,16 +16,25 @@ public class RaceViewModelImpl: BaseViewModel, ViewModel, SimpleDataSource, Obse
     public typealias ItemType = RaceSummaryItem
     
     private static let MaxNextRaceItemCount = 5
-    private static let VisibleWindow: TimeInterval = 60 // 60 seconds
+    private static let RefreshNextRoundTimeInterval: TimeInterval = 60 // 60 seconds
     private static let RefreshTimeInterval: TimeInterval = 1 // 1 second
+    
+    @Published public var isLoading: Bool = false
+    @Published public var refreshedDate: Date = Date.now
+    
+    private var publisherRefresh: Timer.TimerPublisher
+    
+    private var queue: DispatchQueue
+    private var cancellableNextRoundRaces: Cancellable?
     
     private var httpService: HttpService?
     private var allOfRaceItems: [RaceSummaryItem] = []
     private var nextRaceItems: [RaceSummaryItem] = []
-    private var timer: Timer?
     
     public init(httpService: HttpService) {
         self.httpService = httpService;
+        self.queue = DispatchQueue(label: "com.entain.app.race.queue.race")
+        self.publisherRefresh = Timer.publish(every: Self.RefreshTimeInterval, on: .main, in: .common)
     }
     
     public func initViewModel() {
@@ -58,8 +67,10 @@ public class RaceViewModelImpl: BaseViewModel, ViewModel, SimpleDataSource, Obse
     }
     
     private func loadRaceItems() {
+        self.isLoading = true
         let request = Self.getRequest(method: "nextraces", count: Constants.pageSize)
         self.httpService?.request(request: request, completion: { [weak self] (result: Result<Response<RaceThumbModel>, EnError>) in
+            self?.isLoading = false
             switch result {
             case .success(let response):
                 self?.onReaceItemLoaded(response)
@@ -84,20 +95,27 @@ public class RaceViewModelImpl: BaseViewModel, ViewModel, SimpleDataSource, Obse
         self.printRaceItems(raceItem: self.allOfRaceItems, message: "allOfRaceItems")
         
         self.fillNextRoundRacesIfNeeded()
-        self.startTimer()
+        
+        self.triggeNextRoundPublisherIfNeeded()
     }
     
-    private func startTimer() {
-        self.timer?.invalidate()
+    private func triggeNextRoundPublisherIfNeeded() {
+        if self.cancellableNextRoundRaces != nil {
+            return // timer started already
+        }
         
-        self.timer = Timer.scheduledTimer(timeInterval: Self.VisibleWindow, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
+        self.cancellableNextRoundRaces = self.publisherRefresh
+            .autoconnect()
+            .receive(on: self.queue)
+            .sink(receiveValue: { [weak self] date in
+                self?.onTimer(date)
+            })
     }
     
     private func fillNextRoundRacesIfNeeded() {
         let count = min(Self.MaxNextRaceItemCount - self.nextRaceItems.count, Self.MaxNextRaceItemCount)
         
         if count <= 0 {
-            print("no spaces")
             return
         }
         let raceItems = self.allOfRaceItems[0..<count]
@@ -108,17 +126,19 @@ public class RaceViewModelImpl: BaseViewModel, ViewModel, SimpleDataSource, Obse
         self.printRaceItems(raceItem: self.allOfRaceItems, message: "allOfRaceItems after fill")
     }
     
-    @objc private func onTimer() {
-        let currentTimeInterval = Date.now.timeIntervalSince1970
+    @objc private func onTimer(_ date: Date) {
+        let currentTimeInterval = date.timeIntervalSince1970
         
         self.nextRaceItems.removeAll { item in
-            currentTimeInterval - item.advertisedStart.seconds > Self.VisibleWindow
+            currentTimeInterval - item.advertisedStart.seconds > Self.RefreshNextRoundTimeInterval
         }
         
         self.fillNextRoundRacesIfNeeded()
         if self.allOfRaceItems.count <= Self.MaxNextRaceItemCount {
             self.loadRaceItems()
         }
+        
+        self.refreshedDate = date
     }
     
     private func printRaceItems(raceItem: [RaceSummaryItem], message: String) {
