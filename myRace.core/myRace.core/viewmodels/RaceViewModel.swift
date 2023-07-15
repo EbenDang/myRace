@@ -87,10 +87,10 @@ public class RaceViewModelImpl: BaseViewModel, ViewModel, SimpleDataSource, Obse
             return
         }
         
-        // sort
-        let items = Array(model.raceSummeries.values).sorted{$0.advertisedStart.seconds < $1.advertisedStart.seconds}
+        var tmp = Array(self.allOfRaceItems)
+        tmp.append(contentsOf: model.raceSummeries.values)
         
-        self.allOfRaceItems.append(contentsOf: items)
+        self.allOfRaceItems.append(contentsOf: tmp.sorted{$0.advertisedStart.seconds < $1.advertisedStart.seconds})
         
         self.printRaceItems(raceItem: self.allOfRaceItems, message: "allOfRaceItems")
         
