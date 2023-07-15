@@ -12,7 +12,7 @@ public protocol ViewModel {
     func initViewModel()
 }
 
-public class RaceViewModelImpl: BaseViewModel, ViewModel, SimpleDataSource, ObservableObject {
+public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, ObservableObject {
     public typealias ItemType = RaceSummaryItem
     
     private static let MaxNextRaceItemCount = 5

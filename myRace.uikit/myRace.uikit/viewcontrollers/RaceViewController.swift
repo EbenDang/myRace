@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import myRace_core
 
-class RaceViewController: EnViewControllerImpl<RaceViewModelImpl> {
+class RaceViewController: EnViewControllerImpl<RaceViewModel> {
     
     // MARK: - EnViewController
     override func initView() {

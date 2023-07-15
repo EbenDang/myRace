@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let serviceLocator = MyRaceCore.getServiceLocator()
         let httpService: HttpService? = serviceLocator.resolve()
-        let viewModel = RaceViewModelImpl(httpService: httpService!)
+        let viewModel = RaceViewModel(httpService: httpService!)
         let raceViewController = RaceViewController(viewModel: viewModel)
         
         self.window = UIWindow(windowScene: windowScene)
