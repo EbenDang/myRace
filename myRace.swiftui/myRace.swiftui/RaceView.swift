@@ -68,13 +68,15 @@ struct RaceListView: View {
     var body: some View {
         VStack {
             List(raceItems) {item in
-                HStack {
+                HStack(spacing: 10) {
                     Text("\(item.meetingName)")
-                    Spacer()
+                        .frame(width: 150, alignment: .leading)
                     Spacer()
                     Text("\(item.raceNum)")
+                        .frame(width: 50, alignment: .trailing)
                     Spacer()
                     Text("\(self.getCountingDown(item.advertisedStart.seconds))")
+                        .frame(width: 80, alignment: .trailing)
                 }
             }
         }
