@@ -24,6 +24,9 @@
 		24AEF5582A6028D90092C771 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5572A6028D90092C771 /* BaseView.swift */; };
 		24AEF55A2A6029000092C771 /* EnModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5592A6029000092C771 /* EnModelView.swift */; };
 		24AEF55F2A602A110092C771 /* RaceItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF55E2A602A110092C771 /* RaceItemCell.swift */; };
+		24AEF5702A62E1470092C771 /* RaceFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF56F2A62E1470092C771 /* RaceFilterViewController.swift */; };
+		24AEF5722A62E1C50092C771 /* StaticTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5712A62E1C50092C771 /* StaticTableView.swift */; };
+		24AEF5742A62E3FB0092C771 /* RaceFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5732A62E3FB0092C771 /* RaceFilterCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		24AEF5572A6028D90092C771 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		24AEF5592A6029000092C771 /* EnModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnModelView.swift; sourceTree = "<group>"; };
 		24AEF55E2A602A110092C771 /* RaceItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceItemCell.swift; sourceTree = "<group>"; };
+		24AEF56F2A62E1470092C771 /* RaceFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceFilterViewController.swift; sourceTree = "<group>"; };
+		24AEF5712A62E1C50092C771 /* StaticTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTableView.swift; sourceTree = "<group>"; };
+		24AEF5732A62E3FB0092C771 /* RaceFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceFilterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,7 @@
 			children = (
 				24AEF5482A6023700092C771 /* base */,
 				24AEF5502A6024EE0092C771 /* RaceViewController.swift */,
+				24AEF56F2A62E1470092C771 /* RaceFilterViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -198,6 +205,7 @@
 			children = (
 				24AEF5562A6028BB0092C771 /* base */,
 				24AEF55E2A602A110092C771 /* RaceItemCell.swift */,
+				24AEF5732A62E3FB0092C771 /* RaceFilterCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -207,6 +215,7 @@
 			children = (
 				24AEF5572A6028D90092C771 /* BaseView.swift */,
 				24AEF5592A6029000092C771 /* EnModelView.swift */,
+				24AEF5712A62E1C50092C771 /* StaticTableView.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -350,9 +359,12 @@
 			files = (
 				24AEF5542A6025D30092C771 /* UIView+Race.swift in Sources */,
 				24AEF54A2A6023900092C771 /* BaseViewController.swift in Sources */,
+				24AEF5722A62E1C50092C771 /* StaticTableView.swift in Sources */,
 				24AEF54F2A6024130092C771 /* EnViewController.swift in Sources */,
+				24AEF5742A62E3FB0092C771 /* RaceFilterCell.swift in Sources */,
 				24AEF4A32A5ED2BE0092C771 /* AppDelegate.swift in Sources */,
 				24AEF4A52A5ED2BE0092C771 /* SceneDelegate.swift in Sources */,
+				24AEF5702A62E1470092C771 /* RaceFilterViewController.swift in Sources */,
 				24AEF55A2A6029000092C771 /* EnModelView.swift in Sources */,
 				24AEF55F2A602A110092C771 /* RaceItemCell.swift in Sources */,
 				24AEF5512A6024EE0092C771 /* RaceViewController.swift in Sources */,

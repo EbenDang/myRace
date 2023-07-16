@@ -11,8 +11,10 @@ import myRace_core
 
 class RaceViewController: EnViewControllerImpl<RaceViewModel> {
     
-    // MARK: - EnViewController
+    // MARK: - RaceViewController
     override func initView() {
+        self.title = "Race"
+        
         self.initTableView()
         
         self.view.addSubview(self.tableView)
@@ -47,11 +49,27 @@ class RaceViewController: EnViewControllerImpl<RaceViewModel> {
         self.viewModel.initViewModel()
     }
     
+    override func customeNavigationBar() {
+        let rightNavBtn = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(didFilterTouchUpInside))
+        self.navigationItem.rightBarButtonItem = rightNavBtn
+    }
+    
     // MARK: - Private functions
     private func initTableView() {
         self.tableView.register(RaceItemCell.self, forCellReuseIdentifier: RaceItemCell.getIdentifier())
         self.tableView.separatorStyle = .none
         self.tableView.dataSource = self
+    }
+    
+    @objc private func didFilterTouchUpInside() {
+        let viewModel = RaceFilterViewModel()
+        viewModel.$selFilters.receive(on: RunLoop.main)
+            .sink { [weak self] filters in
+                self?.viewModel.setFilters(filters: filters)
+            }.store(in: &self.cancellables)
+        
+        let vc = RaceFilterViewController(viewModel: viewModel)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Lazy loading

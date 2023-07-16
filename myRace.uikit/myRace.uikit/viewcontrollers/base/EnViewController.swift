@@ -16,6 +16,7 @@ protocol EnViewController {
     func initView()
     func initLayout()
     func initViewModel()
+    func customeNavigationBar()
 }
 
 class EnViewControllerImpl<T: ViewModel>: BaseViewController, EnViewController {
@@ -34,6 +35,7 @@ class EnViewControllerImpl<T: ViewModel>: BaseViewController, EnViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.customeNavigationBar()
         self.initView()
         self.initLayout()
         self.initViewModel()
@@ -47,5 +49,8 @@ class EnViewControllerImpl<T: ViewModel>: BaseViewController, EnViewController {
     }
     
     func initViewModel() {
+    }
+    
+    func customeNavigationBar() {
     }
 }

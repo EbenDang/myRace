@@ -8,7 +8,7 @@
 import Foundation
 
 extension Array {
-    func validIndex(index: Int) -> Bool {
+    public func validIndex(index: Int) -> Bool {
         return index >= 0 && index < self.count
     }
 }

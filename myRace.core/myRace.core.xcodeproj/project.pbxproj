@@ -44,6 +44,10 @@
 		24AEF5622A6036610092C771 /* MyRaceCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5602A6036610092C771 /* MyRaceCore.swift */; };
 		24AEF5672A6165670092C771 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5662A6165670092C771 /* Utils.swift */; };
 		24AEF5682A6165670092C771 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5662A6165670092C771 /* Utils.swift */; };
+		24AEF56A2A62DE000092C771 /* RaceFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5692A62DE000092C771 /* RaceFilterViewModel.swift */; };
+		24AEF56B2A62DE000092C771 /* RaceFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5692A62DE000092C771 /* RaceFilterViewModel.swift */; };
+		24AEF56D2A62DE250092C771 /* RaceFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF56C2A62DE250092C771 /* RaceFilterModel.swift */; };
+		24AEF56E2A62DE250092C771 /* RaceFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF56C2A62DE250092C771 /* RaceFilterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +82,8 @@
 		24AEF55B2A6029C00092C771 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		24AEF5602A6036610092C771 /* MyRaceCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRaceCore.swift; sourceTree = "<group>"; };
 		24AEF5662A6165670092C771 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		24AEF5692A62DE000092C771 /* RaceFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceFilterViewModel.swift; sourceTree = "<group>"; };
+		24AEF56C2A62DE250092C771 /* RaceFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceFilterModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,7 @@
 			children = (
 				24AEF52C2A5EDA2A0092C771 /* RaceViewModel.swift */,
 				24AEF53D2A600DC80092C771 /* BaseViewModel.swift */,
+				24AEF5692A62DE000092C771 /* RaceFilterViewModel.swift */,
 			);
 			path = viewmodels;
 			sourceTree = "<group>";
@@ -178,6 +185,7 @@
 				24AEF5262A5ED8F90092C771 /* Request.swift */,
 				24AEF52F2A5EDA9C0092C771 /* RaceThumbModel.swift */,
 				24AEF5322A5EDDFD0092C771 /* Response.swift */,
+				24AEF56C2A62DE250092C771 /* RaceFilterModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -327,9 +335,11 @@
 				24AEF4812A5ED2890092C771 /* myRace_core.docc in Sources */,
 				24AEF5672A6165670092C771 /* Utils.swift in Sources */,
 				24AEF5272A5ED8F90092C771 /* Request.swift in Sources */,
+				24AEF56A2A62DE000092C771 /* RaceFilterViewModel.swift in Sources */,
 				24AEF52D2A5EDA2A0092C771 /* RaceViewModel.swift in Sources */,
 				24AEF5162A5ED38D0092C771 /* HttpService.swift in Sources */,
 				24AEF5192A5ED39C0092C771 /* HttpServiceImpl.swift in Sources */,
+				24AEF56D2A62DE250092C771 /* RaceFilterModel.swift in Sources */,
 				24AEF5382A6006790092C771 /* UrlQueryItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,9 +361,11 @@
 				24AEF48C2A5ED2890092C771 /* myRace_coreTests.swift in Sources */,
 				24AEF5682A6165670092C771 /* Utils.swift in Sources */,
 				24AEF5282A5ED8F90092C771 /* Request.swift in Sources */,
+				24AEF56B2A62DE000092C771 /* RaceFilterViewModel.swift in Sources */,
 				24AEF52E2A5EDA2A0092C771 /* RaceViewModel.swift in Sources */,
 				24AEF5172A5ED38D0092C771 /* HttpService.swift in Sources */,
 				24AEF51A2A5ED39C0092C771 /* HttpServiceImpl.swift in Sources */,
+				24AEF56E2A62DE250092C771 /* RaceFilterModel.swift in Sources */,
 				24AEF5392A6006790092C771 /* UrlQueryItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

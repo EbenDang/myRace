@@ -41,6 +41,10 @@ public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, Observab
         self.loadRaceItems()
     }
     
+    public func setFilters(filters: [RaceFilterModel]) {
+        
+    }
+    
     // MARK: - SimpleDataSource
     public func getSectionCount() -> Int {
         return 1
