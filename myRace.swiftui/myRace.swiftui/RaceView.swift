@@ -22,13 +22,16 @@ struct RaceView: View {
     var body: some View {
         VStack {
             NavigationStack {
-                VStack {
-                    RaceListView(raceItems: $raceItems)
-                }
+                RaceListView(raceItems: $raceItems)
                 .navigationTitle("Races")
                 .toolbar {
                     NavigationLink {
                         RaceFilterView(viewModel: RaceFilterViewModel(existedFilters: selFilters), selFilters: $selFilters)
+                            .navigationTitle("Race filters")
+                            .onChange(of: selFilters) { newValue in
+                                //print(selFilters)
+                                self.viewModel.setFilters(filters: newValue)
+                            }
                     } label: {
                         Text("Filter")
                     }
@@ -38,6 +41,7 @@ struct RaceView: View {
         }
         .padding()
         .onAppear {
+            print("dddd")
             if !viewDidLoad {
                 viewDidLoad = true
                 self.selFilters = self.viewModel.getFitlers()

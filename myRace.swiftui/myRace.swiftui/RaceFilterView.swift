@@ -27,7 +27,7 @@ struct RaceFilterView: View {
                                 self.didFilterTouched(filter: filter)
                             } label: {
                                 HStack {
-                                    Text(filter.filteName)
+                                    Text(filter.filterName)
                                     if filter.selected {
                                         Spacer()
                                         Image(systemName: "checkmark")
@@ -47,6 +47,7 @@ struct RaceFilterView: View {
                     .receive(on: RunLoop.main)
                     .sink { filters in
                         self.filters = filters
+                        print(self.filters)
                     }.store(in: &self.cancellables)
                 
                 self.viewModel.$selFilters

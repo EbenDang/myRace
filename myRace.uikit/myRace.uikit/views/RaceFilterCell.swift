@@ -24,7 +24,7 @@ class RaceFilterCell: EnModelTableCell<RaceFilterModel> {
             return
         }
         
-        self.textLabel?.text = model.filteName
+        self.textLabel?.text = model.filterName
         self.accessoryType = model.selected ? .checkmark : .none
     }
 }

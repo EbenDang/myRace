@@ -57,7 +57,6 @@ public class RaceFilterViewModel: BaseViewModel, ViewModel, ObservableObject {
     }
     
     public func selFilter(filter: RaceFilterModel, selected: Bool) -> RaceFilterModel? {
-        print(self.filters)
         guard let filterIndex = self.filters.firstIndex(where: {$0.id == filter.id}) else {
             return nil
         }
@@ -65,6 +64,7 @@ public class RaceFilterViewModel: BaseViewModel, ViewModel, ObservableObject {
         var filterModel = self.filters[filterIndex]
         filterModel.selFilter(selected)
         self.filters[filterIndex] = filterModel
+        print(self.filters)
         self.selFilters = self.getSelectedFilters()
         return filterModel
     }

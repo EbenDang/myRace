@@ -171,13 +171,14 @@ public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, Observab
     }
     
     private func printRaceItems(raceItem: [RaceSummaryItem], message: String) {
-        print("\n\n************* \(message) (\(raceItem.count)) **************")
-        raceItem.forEach { item in
-            let strTime = Utils.formatFromTimeInterval(timeInterval: item.advertisedStart.seconds, dateFormat: Constants.defaultDateFormat)
-            print("\(item.meetingName)          start: \(strTime)")
-        }
-        
-        print("******************************************")
+
+//        print("\n\n************* \(message) (\(raceItem.count)) **************")
+//        raceItem.forEach { item in
+//            let strTime = Utils.formatFromTimeInterval(timeInterval: item.advertisedStart.seconds, dateFormat: Constants.defaultDateFormat)
+//            print("\(item.meetingName)          start: \(strTime)")
+//        }
+//        
+//        print("******************************************")
     }
     
 }
