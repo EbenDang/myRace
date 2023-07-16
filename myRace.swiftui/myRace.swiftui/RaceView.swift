@@ -10,9 +10,7 @@ import Combine
 import myRace_core
 
 struct RaceView: View {
-    
     private var serviceLocator: any ServiceLocator
-    private var cancellables: Set<AnyCancellable> = []
     @ObservedObject private var viewModel: RaceViewModel
     
     var body: some View {
@@ -30,7 +28,17 @@ struct RaceView: View {
                 }
                 .navigationTitle("Races")
                 .toolbar {
-                    NavigationLink(destination: RaceFilterView()) {
+                    NavigationLink {
+                        let existedFilters = self.viewModel.getFitlers()
+                        let viewModel = RaceFilterViewModel(existedFilters: existedFilters)
+                        let cancellable = viewModel.$selFilters
+                            .receive(on: RunLoop.main)
+                            .sink { filters in
+                                self.viewModel.setFilters(filters: filters)
+                            }
+                            
+                        RaceFilterView(viewModel: viewModel)
+                    } label: {
                         Text("Filter")
                     }
                 }

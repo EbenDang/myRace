@@ -143,7 +143,7 @@ public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, Observab
     private func applyFilter(raceItems: [RaceSummaryItem], filters: [RaceFilterModel]) -> [RaceSummaryItem] {
         let filteredItems = raceItems.filter { raceItem in
             return filters.contains { filter in
-                filter.filterId == raceItem.categoryId
+                filter.id == raceItem.categoryId
             }
         }
         

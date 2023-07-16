@@ -6,15 +6,48 @@
 //
 
 import SwiftUI
+import myRace_core
 
 struct RaceFilterView: View {
+    @ObservedObject private var viewModel: RaceFilterViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            NavigationStack {
+                List {
+                    ForEach(viewModel.getFilters()) { filter in
+                        HStack {
+                            Button {
+                                self.didFilterTouched(filter: filter)
+                            } label: {
+                                HStack {
+                                    Text(filter.filteName)
+                                    if filter.selected {
+                                        Spacer()
+                                        Image(systemName: "checkmark")
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
+    
+    init(viewModel: RaceFilterViewModel) {
+        self.viewModel = viewModel
+        self.viewModel.initViewModel()
+    }
+    
+    private func didFilterTouched(filter: RaceFilterModel) {
+        _ = self.viewModel.selFilter(filter: filter, selected: !filter.selected)
+    }
+    
 }
 
 struct RaceFilterView_Previews: PreviewProvider {
     static var previews: some View {
-        RaceFilterView()
+        RaceFilterView(viewModel: RaceFilterViewModel())
     }
 }
