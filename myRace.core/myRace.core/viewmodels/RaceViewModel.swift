@@ -21,7 +21,6 @@ public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, Observab
     
     @Published public var isLoading: Bool = false
     @Published public var refreshedDate: Date = Date.now
-    
     public private(set) var nextRaceItems: [RaceSummaryItem] = []
     
     private var publisherRefresh: Timer.TimerPublisher

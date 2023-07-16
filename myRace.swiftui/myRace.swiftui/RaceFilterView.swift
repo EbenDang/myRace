@@ -6,16 +6,22 @@
 //
 
 import SwiftUI
+import Combine
 import myRace_core
 
 struct RaceFilterView: View {
-    @ObservedObject private var viewModel: RaceFilterViewModel
+    
+    @StateObject var viewModel: RaceFilterViewModel
+    @State var cancellables: Set<AnyCancellable> = []
+    @State private var viewDidLoad = false
+    @State private var filters: [RaceFilterModel] = []
+    @Binding var selFilters: [RaceFilterModel]
     
     var body: some View {
         VStack {
             NavigationStack {
                 List {
-                    ForEach(viewModel.getFilters()) { filter in
+                    ForEach(filters) { filter in
                         HStack {
                             Button {
                                 self.didFilterTouched(filter: filter)
@@ -33,12 +39,26 @@ struct RaceFilterView: View {
                 }
             }
         }
+        .onAppear {
+            if !viewDidLoad {
+                self.viewDidLoad = true
+                self.viewModel.initViewModel()
+                self.viewModel.$filters
+                    .receive(on: RunLoop.main)
+                    .sink { filters in
+                        self.filters = filters
+                    }.store(in: &self.cancellables)
+                
+                self.viewModel.$selFilters
+                    .receive(on: RunLoop.main)
+                    .sink { filters in
+                        self.selFilters = filters
+                    }.store(in: &self.cancellables)
+            }
+
+        }
     }
-    
-    init(viewModel: RaceFilterViewModel) {
-        self.viewModel = viewModel
-        self.viewModel.initViewModel()
-    }
+
     
     private func didFilterTouched(filter: RaceFilterModel) {
         _ = self.viewModel.selFilter(filter: filter, selected: !filter.selected)
@@ -48,6 +68,8 @@ struct RaceFilterView: View {
 
 struct RaceFilterView_Previews: PreviewProvider {
     static var previews: some View {
-        RaceFilterView(viewModel: RaceFilterViewModel())
+        //RaceFilterView(viewModel: RaceFilterViewModel())
+        let selFitler: [RaceFilterModel] = []
+        RaceFilterView(viewModel: RaceFilterViewModel(), selFilters: .constant(selFitler))
     }
 }

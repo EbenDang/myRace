@@ -10,34 +10,25 @@ import Combine
 import myRace_core
 
 struct RaceView: View {
+
+    @State var cancellables: Set<AnyCancellable> = []
+    @State var raceItems: [RaceSummaryItem] = []
+    @State private var viewDidLoad = false
+    @State private var selFilters: [RaceFilterModel] = []
+    
     private var serviceLocator: any ServiceLocator
-    @ObservedObject private var viewModel: RaceViewModel
+    private var viewModel: RaceViewModel
     
     var body: some View {
         VStack {
             NavigationStack {
-                List(viewModel.nextRaceItems) {item in
-                    HStack {
-                        Text("\(item.meetingName)")
-                        Spacer()
-                        Spacer()
-                        Text("\(item.raceNum)")
-                        Spacer()
-                        Text("\(self.getCountingDown(item.advertisedStart.seconds))")
-                    }
+                VStack {
+                    RaceListView(raceItems: $raceItems)
                 }
                 .navigationTitle("Races")
                 .toolbar {
                     NavigationLink {
-                        let existedFilters = self.viewModel.getFitlers()
-                        let viewModel = RaceFilterViewModel(existedFilters: existedFilters)
-                        let cancellable = viewModel.$selFilters
-                            .receive(on: RunLoop.main)
-                            .sink { filters in
-                                self.viewModel.setFilters(filters: filters)
-                            }
-                            
-                        RaceFilterView(viewModel: viewModel)
+                        RaceFilterView(viewModel: RaceFilterViewModel(existedFilters: selFilters), selFilters: $selFilters)
                     } label: {
                         Text("Filter")
                     }
@@ -46,6 +37,17 @@ struct RaceView: View {
             .listStyle(PlainListStyle())
         }
         .padding()
+        .onAppear {
+            if !viewDidLoad {
+                viewDidLoad = true
+                self.selFilters = self.viewModel.getFitlers()
+                self.viewModel.$refreshedDate
+                    .receive(on: RunLoop.main)
+                    .sink { _  in
+                        raceItems = self.viewModel.nextRaceItems
+                    }.store(in: &self.cancellables)
+            }
+        }
     }
     
     init(serviceLocator: any ServiceLocator) {
@@ -53,6 +55,25 @@ struct RaceView: View {
         let httpService: HttpService? = self.serviceLocator.resolve()
         self.viewModel = RaceViewModel(httpService: httpService!)
         self.viewModel.initViewModel()
+    }
+}
+
+struct RaceListView: View {
+    @Binding var raceItems: [RaceSummaryItem]
+    
+    var body: some View {
+        VStack {
+            List(raceItems) {item in
+                HStack {
+                    Text("\(item.meetingName)")
+                    Spacer()
+                    Spacer()
+                    Text("\(item.raceNum)")
+                    Spacer()
+                    Text("\(self.getCountingDown(item.advertisedStart.seconds))")
+                }
+            }
+        }
     }
     
     private func getCountingDown(_ timeInterval: TimeInterval) -> String {
