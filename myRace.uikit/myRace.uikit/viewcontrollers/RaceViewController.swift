@@ -30,6 +30,7 @@ class RaceViewController: EnViewControllerImpl<RaceViewModel> {
     }
     
     override func initViewModel() {
+        self.viewModel.initViewModel()
         self.viewModel.$isLoading
             .receive(on: RunLoop.main)
             .sink { [weak self ] loading in
@@ -45,8 +46,6 @@ class RaceViewController: EnViewControllerImpl<RaceViewModel> {
             .sink { [weak self] _ in
                 self?.tableView.reloadData()
             }.store(in: &self.cancellables)
-        
-        self.viewModel.initViewModel()
     }
     
     override func customeNavigationBar() {
@@ -62,7 +61,10 @@ class RaceViewController: EnViewControllerImpl<RaceViewModel> {
     }
     
     @objc private func didFilterTouchUpInside() {
-        let viewModel = RaceFilterViewModel()
+
+        let existedFilters = self.viewModel.getFitlers()
+        let viewModel = RaceFilterViewModel(existedFilters: existedFilters)
+        
         viewModel.$selFilters.receive(on: RunLoop.main)
             .sink { [weak self] filters in
                 self?.viewModel.setFilters(filters: filters)

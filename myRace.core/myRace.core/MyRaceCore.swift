@@ -20,7 +20,7 @@ open class MyRaceCore {
     }
 
     private static func registerServices() {
-        var httpService: HttpService = HttpServiceImpl()
+        let httpService: HttpService = HttpServiceImpl()
         Self.serviceLocator.register(instance: httpService)
     }
     

@@ -23,13 +23,12 @@ public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, Observab
     @Published public var refreshedDate: Date = Date.now
     
     private var publisherRefresh: Timer.TimerPublisher
-    
     private var queue: DispatchQueue
     private var cancellableNextRoundRaces: Cancellable?
-    
     private var httpService: HttpService?
     private var allOfRaceItems: [RaceSummaryItem] = []
     private var nextRaceItems: [RaceSummaryItem] = []
+    private var filters: [RaceFilterModel] = []
     
     public init(httpService: HttpService) {
         self.httpService = httpService;
@@ -42,7 +41,11 @@ public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, Observab
     }
     
     public func setFilters(filters: [RaceFilterModel]) {
-        
+        self.filters = filters
+    }
+    
+    public func getFitlers() -> [RaceFilterModel] {
+        return self.filters
     }
     
     // MARK: - SimpleDataSource
@@ -117,21 +120,40 @@ public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, Observab
     }
     
     private func fillNextRoundRacesIfNeeded() {
-        let count = min(Self.MaxNextRaceItemCount - self.nextRaceItems.count, Self.MaxNextRaceItemCount)
-        
-        if count <= 0 {
-            return
+
+        var allRaceItems: [RaceSummaryItem] = []
+        if !self.filters.isEmpty {
+            allRaceItems = self.applyFilter(raceItems: self.allOfRaceItems, filters: self.filters)
+        } else {
+            allRaceItems = self.allOfRaceItems
         }
-        let raceItems = self.allOfRaceItems[0..<count]
+        
+        self.nextRaceItems.removeAll()
+        let availableCount = min(allRaceItems.count, Self.MaxNextRaceItemCount)
+        
+        let raceItems = allRaceItems[0..<availableCount]
         self.nextRaceItems.append(contentsOf: raceItems)
-        self.allOfRaceItems.removeFirst(count)
         
         self.printRaceItems(raceItem: self.nextRaceItems, message: "nextRaceItems")
         self.printRaceItems(raceItem: self.allOfRaceItems, message: "allOfRaceItems after fill")
     }
     
+    private func applyFilter(raceItems: [RaceSummaryItem], filters: [RaceFilterModel]) -> [RaceSummaryItem] {
+        let filteredItems = raceItems.filter { raceItem in
+            return filters.contains { filter in
+                filter.filterId == raceItem.categoryId
+            }
+        }
+        
+        return filteredItems
+    }
+    
     @objc private func onTimer(_ date: Date) {
         let currentTimeInterval = date.timeIntervalSince1970
+        
+        self.allOfRaceItems.removeAll { item in
+            currentTimeInterval - item.advertisedStart.seconds > Self.RefreshNextRoundTimeInterval
+        }
         
         self.nextRaceItems.removeAll { item in
             currentTimeInterval - item.advertisedStart.seconds > Self.RefreshNextRoundTimeInterval
