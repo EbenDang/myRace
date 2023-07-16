@@ -48,6 +48,8 @@
 		24AEF56B2A62DE000092C771 /* RaceFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5692A62DE000092C771 /* RaceFilterViewModel.swift */; };
 		24AEF56D2A62DE250092C771 /* RaceFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF56C2A62DE250092C771 /* RaceFilterModel.swift */; };
 		24AEF56E2A62DE250092C771 /* RaceFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF56C2A62DE250092C771 /* RaceFilterModel.swift */; };
+		24AEF57A2A64B3890092C771 /* MockHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5792A64B3890092C771 /* MockHttpService.swift */; };
+		24AEF57B2A64B3890092C771 /* MockHttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5792A64B3890092C771 /* MockHttpService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,7 @@
 		24AEF5662A6165670092C771 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		24AEF5692A62DE000092C771 /* RaceFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceFilterViewModel.swift; sourceTree = "<group>"; };
 		24AEF56C2A62DE250092C771 /* RaceFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceFilterModel.swift; sourceTree = "<group>"; };
+		24AEF5792A64B3890092C771 /* MockHttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHttpService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				24AEF48B2A5ED2890092C771 /* myRace_coreTests.swift */,
+				24AEF5792A64B3890092C771 /* MockHttpService.swift */,
 			);
 			path = myRace.coreTests;
 			sourceTree = "<group>";
@@ -329,6 +333,7 @@
 				24AEF5422A600F1D0092C771 /* SimpleDataSource.swift in Sources */,
 				24AEF5612A6036610092C771 /* MyRaceCore.swift in Sources */,
 				24AEF5232A5ED7530092C771 /* String+myRace.swift in Sources */,
+				24AEF57A2A64B3890092C771 /* MockHttpService.swift in Sources */,
 				24AEF51C2A5ED6120092C771 /* ServiceLocator.swift in Sources */,
 				24AEF5332A5EDDFD0092C771 /* Response.swift in Sources */,
 				24AEF53E2A600DC80092C771 /* BaseViewModel.swift in Sources */,
@@ -355,6 +360,7 @@
 				24AEF5432A600F1D0092C771 /* SimpleDataSource.swift in Sources */,
 				24AEF5622A6036610092C771 /* MyRaceCore.swift in Sources */,
 				24AEF5242A5ED7530092C771 /* String+myRace.swift in Sources */,
+				24AEF57B2A64B3890092C771 /* MockHttpService.swift in Sources */,
 				24AEF51D2A5ED6120092C771 /* ServiceLocator.swift in Sources */,
 				24AEF5342A5EDDFD0092C771 /* Response.swift in Sources */,
 				24AEF53F2A600DC80092C771 /* BaseViewModel.swift in Sources */,
