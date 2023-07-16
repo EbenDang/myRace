@@ -18,8 +18,9 @@ public struct RaceThumbModel: Model, Decodable {
     
 }
 
-public struct RaceSummaryItem: Model, Decodable {
-    public let raceId: String
+public struct RaceSummaryItem: Model, Decodable, Identifiable {
+    
+    public let id: String
     public let raceName: String?
     public let raceNum: Int
     public let meetingId: String
@@ -28,7 +29,7 @@ public struct RaceSummaryItem: Model, Decodable {
     public let advertisedStart: Advertised
     
     enum CodingKeys: String, CodingKey {
-        case raceId = "race_id"
+        case id = "race_id"
         case raceName = "race_name"
         case raceNum = "race_number"
         case meetingId = "meeting_id"

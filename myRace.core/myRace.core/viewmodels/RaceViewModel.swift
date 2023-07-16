@@ -22,12 +22,14 @@ public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, Observab
     @Published public var isLoading: Bool = false
     @Published public var refreshedDate: Date = Date.now
     
+    public private(set) var nextRaceItems: [RaceSummaryItem] = []
+    
     private var publisherRefresh: Timer.TimerPublisher
     private var queue: DispatchQueue
     private var cancellableNextRoundRaces: Cancellable?
     private var httpService: HttpService?
     private var allOfRaceItems: [RaceSummaryItem] = []
-    private var nextRaceItems: [RaceSummaryItem] = []
+    // private var nextRaceItems: [RaceSummaryItem] = []
     private var filters: [RaceFilterModel] = []
     
     public init(httpService: HttpService) {
@@ -164,7 +166,9 @@ public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, Observab
             self.loadRaceItems()
         }
         
-        self.refreshedDate = date
+        DispatchQueue.main.async {
+            self.refreshedDate = date
+        }
     }
     
     private func printRaceItems(raceItem: [RaceSummaryItem], message: String) {

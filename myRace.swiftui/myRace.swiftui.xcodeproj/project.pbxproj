@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24AEF4DF2A5ED2F00092C771 /* myRace_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4DE2A5ED2F00092C771 /* myRace_swiftuiApp.swift */; };
-		24AEF4E12A5ED2F00092C771 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4E02A5ED2F00092C771 /* ContentView.swift */; };
+		24AEF4E12A5ED2F00092C771 /* RaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4E02A5ED2F00092C771 /* RaceView.swift */; };
 		24AEF4E32A5ED2F10092C771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24AEF4E22A5ED2F10092C771 /* Assets.xcassets */; };
 		24AEF4E62A5ED2F10092C771 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24AEF4E52A5ED2F10092C771 /* Preview Assets.xcassets */; };
 		24AEF4F02A5ED2F20092C771 /* myRace_swiftuiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4EF2A5ED2F20092C771 /* myRace_swiftuiTests.swift */; };
@@ -16,6 +16,7 @@
 		24AEF4FC2A5ED2F20092C771 /* myRace_swiftuiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF4FB2A5ED2F20092C771 /* myRace_swiftuiUITestsLaunchTests.swift */; };
 		24AEF5102A5ED3440092C771 /* myRace_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AEF50F2A5ED3440092C771 /* myRace_core.framework */; };
 		24AEF5112A5ED3440092C771 /* myRace_core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24AEF50F2A5ED3440092C771 /* myRace_core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		24AEF5762A6397FC0092C771 /* RaceFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AEF5752A6397FC0092C771 /* RaceFilterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,7 @@
 /* Begin PBXFileReference section */
 		24AEF4DB2A5ED2F00092C771 /* myRace.swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myRace.swiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AEF4DE2A5ED2F00092C771 /* myRace_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myRace_swiftuiApp.swift; sourceTree = "<group>"; };
-		24AEF4E02A5ED2F00092C771 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		24AEF4E02A5ED2F00092C771 /* RaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceView.swift; sourceTree = "<group>"; };
 		24AEF4E22A5ED2F10092C771 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24AEF4E52A5ED2F10092C771 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		24AEF4EB2A5ED2F20092C771 /* myRace.swiftuiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myRace.swiftuiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +63,7 @@
 		24AEF4FB2A5ED2F20092C771 /* myRace_swiftuiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myRace_swiftuiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		24AEF50D2A5ED3360092C771 /* myRace-swiftui-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "myRace-swiftui-Info.plist"; sourceTree = SOURCE_ROOT; };
 		24AEF50F2A5ED3440092C771 /* myRace_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = myRace_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24AEF5752A6397FC0092C771 /* RaceFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceFilterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +118,10 @@
 			children = (
 				24AEF50D2A5ED3360092C771 /* myRace-swiftui-Info.plist */,
 				24AEF4DE2A5ED2F00092C771 /* myRace_swiftuiApp.swift */,
-				24AEF4E02A5ED2F00092C771 /* ContentView.swift */,
+				24AEF4E02A5ED2F00092C771 /* RaceView.swift */,
 				24AEF4E22A5ED2F10092C771 /* Assets.xcassets */,
 				24AEF4E42A5ED2F10092C771 /* Preview Content */,
+				24AEF5752A6397FC0092C771 /* RaceFilterView.swift */,
 			);
 			path = myRace.swiftui;
 			sourceTree = "<group>";
@@ -287,7 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24AEF4E12A5ED2F00092C771 /* ContentView.swift in Sources */,
+				24AEF5762A6397FC0092C771 /* RaceFilterView.swift in Sources */,
+				24AEF4E12A5ED2F00092C771 /* RaceView.swift in Sources */,
 				24AEF4DF2A5ED2F00092C771 /* myRace_swiftuiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
