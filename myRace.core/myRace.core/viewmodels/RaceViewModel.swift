@@ -28,12 +28,13 @@ public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, Observab
     private var cancellableNextRoundRaces: Cancellable?
     private var httpService: HttpService?
     private var allOfRaceItems: [RaceSummaryItem] = []
-    // private var nextRaceItems: [RaceSummaryItem] = []
     private var filters: [RaceFilterModel] = []
     
     public init(httpService: HttpService) {
         self.httpService = httpService;
         self.queue = DispatchQueue(label: "com.entain.app.race.queue.race")
+        
+        // a timer to trigge the auto-refresh
         self.publisherRefresh = Timer.publish(every: Self.RefreshTimeInterval, on: .main, in: .common)
     }
     
@@ -116,10 +117,11 @@ public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, Observab
             .autoconnect()
             .receive(on: self.queue)
             .sink(receiveValue: { [weak self] date in
-                self?.onTimer(date)
+                self?.onTimer(date) // refresh here
             })
     }
     
+    // fill the next round race items
     private func fillNextRoundRacesIfNeeded() {
 
         var allRaceItems: [RaceSummaryItem] = []
@@ -172,13 +174,13 @@ public class RaceViewModel: BaseViewModel, ViewModel, SimpleDataSource, Observab
     
     private func printRaceItems(raceItem: [RaceSummaryItem], message: String) {
 
-//        print("\n\n************* \(message) (\(raceItem.count)) **************")
-//        raceItem.forEach { item in
-//            let strTime = Utils.formatFromTimeInterval(timeInterval: item.advertisedStart.seconds, dateFormat: Constants.defaultDateFormat)
-//            print("\(item.meetingName)          start: \(strTime)")
-//        }
-//        
-//        print("******************************************")
+        print("\n\n************* \(message) (\(raceItem.count)) **************")
+        raceItem.forEach { item in
+            let strTime = Utils.formatFromTimeInterval(timeInterval: item.advertisedStart.seconds, dateFormat: Constants.defaultDateFormat)
+            print("\(item.meetingName)          start: \(strTime)")
+        }
+        
+        print("******************************************")
     }
     
 }
